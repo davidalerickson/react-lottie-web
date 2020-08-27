@@ -1,10 +1,10 @@
 import React from "react";
 import Container from "./layout/Container";
-import LottieContainer from "../components/widgets/LottieContainer";
+// import LottieContainer from "../components/widgets/LottieContainer";
 import LottiePlayer from "../components/widgets/LottiePlayer";
 
 //Animations
-import Carmela from "../json/Carmela.json";
+import Carmela from "../json/family.json";
 import CountDownFrom10 from "../json/CountdownTo10.json";
 
 import { ThemeProvider } from "styled-components";
@@ -28,8 +28,8 @@ class App extends React.Component {
       <>
         <ThemeProvider theme={this.state.theme}>
           <Container marginTB="8rem" maxWidth="120rem">
-            <LottieContainer JsonAnimation={Carmela} />
-            <LottiePlayer JsonAnimation={CountDownFrom10} />
+            <LottiePlayer JsonAnimation={Carmela} name="Carmela" />
+            <LottiePlayer JsonAnimation={CountDownFrom10} name="Family" />
           </Container>
         </ThemeProvider>
       </>
