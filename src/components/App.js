@@ -4,6 +4,8 @@ import { HashRouter, Router, Route, Switch } from "react-router-dom";
 import Container from "./layout/Container";
 import Animation from "./layout/Animation";
 import AnimationSequences from "./layout/AnimationSequences";
+import Home from "./layout/Home";
+import Header from "./Header";
 
 import { ThemeProvider } from "styled-components";
 
@@ -26,8 +28,20 @@ class App extends React.Component {
       <>
         <ThemeProvider theme={this.state.theme}>
           <Container marginTB="8rem" maxWidth="120rem">
-            <Animation />
-            <AnimationSequences />
+            <HashRouter basename="/">
+              {/* <HashRouter basename="/" history={history}> */}
+              <Header />
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/Animation" exact component={Animation} />
+                <Route
+                  path="/AnimationSequences"
+                  exact
+                  component={AnimationSequences}
+                />
+                <AnimationSequences />
+              </Switch>
+            </HashRouter>
           </Container>
         </ThemeProvider>
       </>
