@@ -8,6 +8,17 @@ const Wrapper = styled.div`
   background-color: white;
   box-shadow: var(--shadow-light);
   border-radius: 5px;
+  .lottie-animation {
+    width: 50%;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 2rem auto;
+  }
+  .controls {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+  }
   .btn {
     display: inline-block;
     padding: 0.3em 1.2em;
@@ -21,6 +32,7 @@ const Wrapper = styled.div`
     background-color: #4eb5f1;
     text-align: center;
     transition: all 0.2s;
+    cursor: pointer;
   }
   .btn:hover {
     background-color: #4095c6;
@@ -70,55 +82,57 @@ export class LottieContainer extends Component {
     return frameFromMarker;
   };
 
+  renderButtons() {
+    //extract markers and frames from JsonAnimation
+    const markers = this.props.JsonAnimation.markers;
+    const inOutFrames = markers.map((el) => [
+      el.cm.toLowerCase(),
+      Math.round(el.tm),
+    ]);
+    //group markers into in/out pairs
+    const InOutFramePairs = inOutFrames.reduce(function (
+      result,
+      value,
+      index,
+      array
+    ) {
+      if (index % 2 === 0) result.push(array.slice(index, index + 2));
+      return result;
+    },
+    []);
+
+    //map over inOutFramePairs to create render buttons which will call lottie playSegments
+    // console.log(InOutFramePairs);
+    const buttons = InOutFramePairs.map((el, index) => {
+      return (
+        <>
+          <div
+            className="btn"
+            onClick={() =>
+              this.state.animObj.playSegments([el[0][1], el[1][1]], true)
+            }
+            key={index}
+          >
+            {el[0][0]}
+          </div>
+        </>
+      );
+    });
+    return buttons;
+  }
+
   render() {
-    console.log(this.frameFromName("david"));
+    console.log(this.renderButtons());
     return (
       <Wrapper>
         <div
-          style={{ width: 300, margin: "0 auto" }}
+          className="lottie-animation"
           ref={(ref) => (this.animBox = ref)}
           onMouseEnter={() => this.onAnimEnter()}
           onMouseLeave={() => this.onAnimLeave()}
         ></div>
-        <div
-          className="btn"
-          onClick={() =>
-            this.state.animObj.playSegments(
-              [this.frameFromName("david"), this.frameFromName("david-out")],
-              true
-            )
-          }
-        >
-          David
-        </div>
-        <div
-          className="btn"
-          // onClick={() => this.state.animObj.playSegments([10, 100], false)}
-          onClick={() =>
-            this.state.animObj.playSegments(
-              [
-                this.frameFromName("carmela"),
-                this.frameFromName("carmela-out"),
-              ],
-              true
-            )
-          }
-        >
-          Carmela
-        </div>
-        <div
-          className="btn"
-          onClick={() =>
-            this.state.animObj.playSegments(
-              [
-                this.frameFromName("gustavo"),
-                this.frameFromName("gustavo-out"),
-              ],
-              true
-            )
-          }
-        >
-          Gustavo
+        <div className="controls">
+          <div>{this.renderButtons()}</div>
         </div>
       </Wrapper>
     );
