@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 import Container from "./layout/Container";
 import Animation from "./layout/Animation";

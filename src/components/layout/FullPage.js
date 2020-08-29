@@ -3,7 +3,7 @@ import LottieFullPage from "../widgets/LottieFullPage";
 
 //Animations
 import Carmela from "../../json/Carmela.json";
-import CountDownFrom10 from "../../json/CountdownTo10.json";
+// import CountDownFrom10 from "../../json/CountdownTo10.json";
 
 const FullPage = () => {
   return (
