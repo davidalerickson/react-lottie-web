@@ -4,6 +4,7 @@ import { HashRouter, Router, Route, Switch } from "react-router-dom";
 import Container from "./layout/Container";
 import Animation from "./layout/Animation";
 import AnimationSequences from "./layout/AnimationSequences";
+import FullPage from "./layout/FullPage";
 import Home from "./layout/Home";
 import Header from "./Header";
 
@@ -39,7 +40,7 @@ class App extends React.Component {
                   exact
                   component={AnimationSequences}
                 />
-                <AnimationSequences />
+                <Route path="/FullPage" exact component={FullPage} />
               </Switch>
             </HashRouter>
           </Container>

@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     left: 0;
     width: 100%;
     background-color: black;
+    z-index: 10;
   }
   .menu {
     display: flex;
@@ -35,6 +36,9 @@ const Header = () => {
           </Link>
           <Link className="item" to="/AnimationSequences">
             Animation Sequences
+          </Link>
+          <Link className="item" to="/FullPage">
+            Full Page Animation
           </Link>
         </div>
       </div>
