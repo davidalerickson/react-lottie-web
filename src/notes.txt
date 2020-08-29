@@ -1,0 +1,6 @@
+markers in adobe after effects must be single line.
+
+For creating sequences it is best to create a marker which marks the start of the sequence
+ and one that represents the end such as menu-home and menu-home-out
+
+ Do not differentate between upper and lower case. all will be converted to lowercase

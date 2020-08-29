@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 import lottie from "lottie-web";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  margin: 0 auto;
+  width: 80%;
+  background-color: white;
+  box-shadow: var(--shadow-light);
+  border-radius: 5px;
+`;
 
 export class LottieContainer extends Component {
   componentDidMount() {
@@ -15,10 +24,12 @@ export class LottieContainer extends Component {
 
   render() {
     return (
-      <div
-        style={{ width: 300, margin: "0 auto" }}
-        ref={(ref) => (this.animBox = ref)}
-      ></div>
+      <Wrapper>
+        <div
+          style={{ width: 300, margin: "0 auto" }}
+          ref={(ref) => (this.animBox = ref)}
+        ></div>
+      </Wrapper>
     );
   }
 }
