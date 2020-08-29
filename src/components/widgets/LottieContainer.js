@@ -8,6 +8,12 @@ const Wrapper = styled.div`
   background-color: white;
   box-shadow: var(--shadow-light);
   border-radius: 5px;
+  .lottie-animation {
+    width: 50%;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 2rem auto;
+  }
 `;
 
 export class LottieContainer extends Component {
@@ -19,15 +25,26 @@ export class LottieContainer extends Component {
       loop: true,
       autoplay: true,
       animationData: this.props.JsonAnimation,
+      name: this.props.name,
     });
   }
+
+  onAnimEnter = () => {
+    lottie.pause(this.props.name);
+  };
+
+  onAnimLeave = () => {
+    lottie.play(this.props.name);
+  };
 
   render() {
     return (
       <Wrapper>
         <div
-          style={{ width: 300, margin: "0 auto" }}
+          className="lottie-animation"
           ref={(ref) => (this.animBox = ref)}
+          onMouseEnter={() => this.onAnimEnter()}
+          onMouseLeave={() => this.onAnimLeave()}
         ></div>
       </Wrapper>
     );

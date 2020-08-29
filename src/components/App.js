@@ -1,7 +1,8 @@
 import React from "react";
 import Container from "./layout/Container";
 import LottieContainer from "../components/widgets/LottieContainer";
-import LottiePlayer from "../components/widgets/LottiePlayer";
+// import LottiePlayer from "../components/widgets/LottiePlayer";
+import LottiePlaySeqWithButtons from "./widgets/LottiePlaySeqWithButtons";
 
 //Animations
 import Carmela from "../json/family.json";
@@ -28,17 +29,16 @@ class App extends React.Component {
       <>
         <ThemeProvider theme={this.state.theme}>
           <Container marginTB="8rem" maxWidth="120rem">
-            <LottieContainer JsonAnimation={CountDownFrom10} />
-            <LottiePlayer
+            <LottiePlaySeqWithButtons
               JsonAnimation={Carmela}
-              name="david"
+              name="carmela"
               markers={Carmela.markers}
             />
-            {/* <LottiePlayer
-              JsonAnimation={CountDownFrom10}
-              name="CountDownFrom10"
-              markers={CountDownFrom10.markers}
-            /> */}
+            <LottieContainer
+              JsonAnimation={Carmela}
+              name="carmela2"
+              markers={Carmela.markers}
+            />
           </Container>
         </ThemeProvider>
       </>
