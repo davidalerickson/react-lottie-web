@@ -1,12 +1,9 @@
 import React from "react";
-import Container from "./layout/Container";
-import LottieContainer from "../components/widgets/LottieContainer";
-// import LottiePlayer from "../components/widgets/LottiePlayer";
-import LottiePlaySeqWithButtons from "./widgets/LottiePlaySeqWithButtons";
+import { HashRouter, Router, Route, Switch } from "react-router-dom";
 
-//Animations
-import Carmela from "../json/family.json";
-import CountDownFrom10 from "../json/CountdownTo10.json";
+import Container from "./layout/Container";
+import Animation from "./layout/Animation";
+import AnimationSequences from "./layout/AnimationSequences";
 
 import { ThemeProvider } from "styled-components";
 
@@ -29,16 +26,8 @@ class App extends React.Component {
       <>
         <ThemeProvider theme={this.state.theme}>
           <Container marginTB="8rem" maxWidth="120rem">
-            <LottiePlaySeqWithButtons
-              JsonAnimation={Carmela}
-              name="carmela"
-              markers={Carmela.markers}
-            />
-            <LottieContainer
-              JsonAnimation={Carmela}
-              name="carmela2"
-              markers={Carmela.markers}
-            />
+            <Animation />
+            <AnimationSequences />
           </Container>
         </ThemeProvider>
       </>
