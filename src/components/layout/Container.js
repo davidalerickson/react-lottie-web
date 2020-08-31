@@ -11,11 +11,11 @@ const ContainerWrapper = styled.div`
   display: grid;
   grid-template-rows: 1fr;
   grid-gap: 5rem;
-  @media only screen and (max-width: 900px) {
+  /* @media only screen and (max-width: 900px) {
     margin: 0;
     max-width: 100%;
     width: 100%;
-  }
+  } */
 `;
 
 class Container extends React.Component {

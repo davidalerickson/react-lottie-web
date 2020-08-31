@@ -10,6 +10,10 @@ import EGLogo from "../../json/EGLogo.json";
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(min-content);
+  }
   .leftContent {
     margin: auto auto;
   }
@@ -19,6 +23,9 @@ const Wrapper = styled.div`
   .rightContent {
     padding: 5rem 10rem 5rem 0;
     text-align: justify;
+    @media only screen and (max-width: 900px) {
+      padding: 5rem 10rem 5rem 5rem;
+    }
   }
   .content-right {
     font-size: 1.2rem;
