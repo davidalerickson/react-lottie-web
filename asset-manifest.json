@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/davidalerickson.github.io/react-lottie-web/static/css/main.47d0af3c.chunk.css",
+    "main.js": "/davidalerickson.github.io/react-lottie-web/static/js/main.bc51af7d.chunk.js",
+    "main.js.map": "/davidalerickson.github.io/react-lottie-web/static/js/main.bc51af7d.chunk.js.map",
+    "runtime-main.js": "/davidalerickson.github.io/react-lottie-web/static/js/runtime-main.ace2c15d.js",
+    "runtime-main.js.map": "/davidalerickson.github.io/react-lottie-web/static/js/runtime-main.ace2c15d.js.map",
+    "static/js/2.6fd296a7.chunk.js": "/davidalerickson.github.io/react-lottie-web/static/js/2.6fd296a7.chunk.js",
+    "static/js/2.6fd296a7.chunk.js.map": "/davidalerickson.github.io/react-lottie-web/static/js/2.6fd296a7.chunk.js.map",
+    "index.html": "/davidalerickson.github.io/react-lottie-web/index.html",
+    "precache-manifest.e837f1281ed0e86a7ddefb51a0b0c904.js": "/davidalerickson.github.io/react-lottie-web/precache-manifest.e837f1281ed0e86a7ddefb51a0b0c904.js",
+    "service-worker.js": "/davidalerickson.github.io/react-lottie-web/service-worker.js",
+    "static/css/main.47d0af3c.chunk.css.map": "/davidalerickson.github.io/react-lottie-web/static/css/main.47d0af3c.chunk.css.map",
+    "static/js/2.6fd296a7.chunk.js.LICENSE.txt": "/davidalerickson.github.io/react-lottie-web/static/js/2.6fd296a7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ace2c15d.js",
+    "static/js/2.6fd296a7.chunk.js",
+    "static/css/main.47d0af3c.chunk.css",
+    "static/js/main.bc51af7d.chunk.js"
+  ]
+}
