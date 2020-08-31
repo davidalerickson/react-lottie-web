@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const ContainerWrapper = styled.div`
-  max-width: ${(props) => props.maxWidth};
-  margin: ${(props) => props.marginTB} auto;
-  padding: 5rem;
+  /* max-width: ${(props) => props.maxWidth}; */
+  /* margin: ${(props) => props.marginTB} auto; */
+  /* padding: 5rem; */
   /* background-color: ${(props) => props.theme.colorPrimary}; */
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);

@@ -9,9 +9,9 @@ const Wrapper = styled.div`
   box-shadow: var(--shadow-light);
   border-radius: 5px;
   .lottie-animation {
-    width: 50%;
-    border: solid 1px black;
-    border-radius: 5px;
+    width: 100%;
+    /* border: solid 1px black;
+    border-radius: 5px; */
     margin: 2rem auto;
   }
 `;
