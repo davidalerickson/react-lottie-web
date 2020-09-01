@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     padding: 5rem 10rem 5rem 0;
     text-align: justify;
     @media only screen and (max-width: 900px) {
-      padding: 5rem 10rem 5rem 5rem;
+      padding: 5rem 5rem 5rem 5rem;
     }
   }
   .content-right {

@@ -40,6 +40,9 @@ const Header = () => {
           <Link className="item" to="/FullPage">
             Full Page Animation
           </Link>
+          <Link className="item" to="/Scroll">
+            Scroll
+          </Link>
         </div>
       </div>
     </Wrapper>
