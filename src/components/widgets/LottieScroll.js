@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import lottie from "lottie-web";
 import styled from "styled-components";
+import { Parallax, Background } from "react-parallax";
+
+import SomeJPEG from "../../json/images/perspective_distort.jpg";
+import SomeJPEGInvis from "../../json/images/perspective_distort.jpg";
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -32,10 +36,29 @@ export class LottieScroll extends Component {
   render() {
     return (
       <Wrapper>
-        <div
-          className="lottie-animation"
-          ref={(ref) => (this.animBox = ref)}
-        ></div>
+        <Parallax
+          blur={0}
+          bgImage={SomeJPEGInvis}
+          bgImageAlt="the cat"
+          strength={0}
+        >
+          <div
+            className="lottie-animation"
+            ref={(ref) => (this.animBox = ref)}
+          ></div>
+        </Parallax>
+
+        <div style={{ height: "200px" }}></div>
+
+        <Parallax
+          blur={0}
+          bgImage={SomeJPEG}
+          bgImageAlt="the cat"
+          strength={300}
+        >
+          <div style={{ height: "200px" }}></div>
+        </Parallax>
+        <div style={{ height: "2000px" }}></div>
       </Wrapper>
     );
   }
