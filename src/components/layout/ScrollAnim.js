@@ -1,16 +1,19 @@
 import React, { Component } from "react";
-import LottieScroll from "../widgets/LottieScroll";
+import LottieScrollTest from "../widgets/LottieScroll";
 
 import CountdownTo10 from "../../json/CountdownTo10.json";
 
 export class ScrollAnim extends Component {
   render() {
     return (
-      <LottieScroll
-        JsonAnimation={CountdownTo10}
-        name="EGLogo"
-        markers={CountdownTo10.markers}
-      />
+      <>
+        <LottieScrollTest
+          JsonAnimation={CountdownTo10}
+          name="CountdownTo10"
+          markers={CountdownTo10.markers}
+        />
+        <div>Other Stuff</div>
+      </>
     );
   }
 }

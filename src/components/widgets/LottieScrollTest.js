@@ -13,14 +13,16 @@ const Wrapper = styled.div`
   box-shadow: var(--shadow-light);
   border-radius: 5px;
   .lottie-animation {
+    position: fixed;
     width: 100%;
-    /* border: solid 1px black;
-    border-radius: 5px; */
+    top: 20px;
+    border: solid 1px black;
+    border-radius: 5px;
     margin: 0 auto;
   }
 `;
 
-export class LottieScroll extends Component {
+export class LottieScrollTest extends Component {
   state = { frames: 0, animObj: {} };
 
   componentDidMount() {
@@ -41,39 +43,50 @@ export class LottieScroll extends Component {
     return (
       <Wrapper>
         {/* <div style={{ height: "1000px" }}>Some Text</div> */}
+        <div
+          className="lottie-animation"
+          ref={(ref) => (this.animBox = ref)}
+        ></div>
         <Parallax
           blur={0}
           bgImage={SomeJPEGInvis}
           bgImageAlt="the cat"
           strength={0}
           renderLayer={(percentage) => (
-            <>
-              <div
-                className="lottie-animation"
-                ref={(ref) => (this.animBox = ref)}
-              >
-                {lottie.goToAndStop(Math.round(this.frames * percentage), true)}
-              </div>
-            </>
+            <div>
+              Hello Moto
+              {lottie.goToAndStop(Math.round(this.frames * percentage), true)}
+            </div>
           )}
         >
           <div></div>
         </Parallax>
 
         <div style={{ height: "200px" }}></div>
-
-        <Parallax
-          blur={0}
-          bgImage={SomeJPEG}
-          bgImageAlt="the cat"
-          strength={300}
-        >
-          <div style={{ height: "200px" }}></div>
-        </Parallax>
-        <div style={{ height: "2000px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
+        <div style={{ height: "200px" }}></div>
+        <div>Scroll Down</div>
       </Wrapper>
     );
   }
 }
 
-export default LottieScroll;
+export default LottieScrollTest;
