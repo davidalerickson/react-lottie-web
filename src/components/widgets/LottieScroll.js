@@ -16,14 +16,15 @@ const Wrapper = styled.div`
     width: 100%;
     /* border: solid 1px black;
     border-radius: 5px; */
-    margin: 2rem auto;
+    margin: 0 auto;
   }
 `;
 
 export class LottieScroll extends Component {
+  state = { frames: 0, animObj: {} };
+
   componentDidMount() {
-    console.log(this.props.JsonAnimation);
-    lottie.loadAnimation({
+    this.anim = lottie.loadAnimation({
       container: this.animBox, //the DOM element which will contain the animation
       renderer: "svg",
       loop: false,
@@ -31,21 +32,34 @@ export class LottieScroll extends Component {
       animationData: this.props.JsonAnimation,
       name: this.props.name,
     });
+    this.frames = this.anim.getDuration(true);
+    this.setState({ frames: this.frames });
   }
 
   render() {
+    console.log(`this is called from outside ${this.frames} frames`);
     return (
       <Wrapper>
+        <div style={{ height: "1000px" }}>Some Text</div>
         <Parallax
           blur={0}
           bgImage={SomeJPEGInvis}
           bgImageAlt="the cat"
           strength={0}
+          renderLayer={(percentage) => (
+            <>
+              <div
+                className="lottie-animation"
+                ref={(ref) => (this.animBox = ref)}
+              >
+                {console.log(
+                  lottie.goToAndStop(Math.round(this.frames * percentage), true)
+                )}
+              </div>
+            </>
+          )}
         >
-          <div
-            className="lottie-animation"
-            ref={(ref) => (this.animBox = ref)}
-          ></div>
+          <div></div>
         </Parallax>
 
         <div style={{ height: "200px" }}></div>
