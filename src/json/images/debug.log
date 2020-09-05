@@ -1,0 +1,3 @@
+[0902/080002.528:WARNING:ipc_message_attachment_set.cc(49)] MessageAttachmentSet destroyed with unconsumed attachments: 0/1
+[0902/080002.528:WARNING:ipc_message_attachment_set.cc(49)] MessageAttachmentSet destroyed with unconsumed attachments: 0/1
+[0902/080002.622:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
