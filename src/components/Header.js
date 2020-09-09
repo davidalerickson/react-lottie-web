@@ -20,6 +20,10 @@ const Wrapper = styled.div`
     color: white;
     font-size: 1.6rem;
     text-decoration: none;
+    @media only screen and (max-width: 56.25em) {
+      font-size: 1.2rem;
+      padding: 0.8rem 1.6rem;
+    }
   }
 `;
 
@@ -35,10 +39,10 @@ const Header = () => {
             Animation
           </Link>
           <Link className="item" to="/AnimationSequences">
-            Animation Sequences
+            Sequences
           </Link>
           <Link className="item" to="/FullPage">
-            Full Page Animation
+            Full Page
           </Link>
           <Link className="item" to="/Scroll">
             Scroll

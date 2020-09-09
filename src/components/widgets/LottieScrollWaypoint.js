@@ -43,7 +43,30 @@ export class LottieScroll extends Component {
     this.setState({ frames: this.frames });
   }
 
+  framesForWaypoints = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46];
+
+  renderWaypoints() {
+    const renderedWaypoints = this.framesForWaypoints.map(
+      (frameForWaypoint, index) => {
+        return (
+          <Waypoint
+            onEnter={() => lottie.goToAndStop(frameForWaypoint, true)}
+            key={index}
+          >
+            <div className="waypoint__text">
+              <h1>Count Down from {10 - index}</h1>
+              <p>Scroll Down to step through Animation</p>
+              <div style={{ height: window.innerHeight }}></div>
+            </div>
+          </Waypoint>
+        );
+      }
+    );
+    return renderedWaypoints;
+  }
+
   render() {
+    console.log(this.renderWaypoints());
     return (
       <Wrapper>
         <div
@@ -53,83 +76,7 @@ export class LottieScroll extends Component {
           {lottie.goToAndStop(1, true)}
         </div>
 
-        <div className="side-content">
-          <Waypoint
-            onEnter={() => lottie.goToAndStop(1, true)}
-            // onEnter={() => console.log("entered area")}
-            // onLeave={() => console.log("left area")}
-          >
-            {/* Fragments used to avoid error */}
-            <div className="waypoint__text">
-              <h1>Count Down from 10</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(6, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 9</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(11, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 8</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(16, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 7</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(21, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 6</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(26, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 5</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(31, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 4</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(36, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 3</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(41, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 2</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-          <Waypoint onEnter={() => lottie.goToAndStop(46, true)}>
-            <div className="waypoint__text">
-              <h1>Count Down from 1</h1>
-              <p>Scroll Down to step through Animation</p>
-              <div style={{ height: window.innerHeight }}></div>
-            </div>
-          </Waypoint>
-        </div>
+        <div className="side-content">{this.renderWaypoints()}</div>
       </Wrapper>
     );
   }
